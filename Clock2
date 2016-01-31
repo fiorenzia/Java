@@ -1,0 +1,56 @@
+
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.util.Calendar;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Clock extends JFrame{
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+			Clock c = new Clock(); 
+			c.setTitle("hoge");
+			c.setBounds(100,100,300,250);
+			c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			JPanel p = new JPanel();
+		    Container contentPane = c.getContentPane();
+		    contentPane.add(p, BorderLayout.CENTER);
+		    c.setVisible(true);
+		    
+				Calendar clock;
+				boolean loop=true;
+				clock = Calendar.getInstance();
+				System.out.println(clock);
+				System.out.println("");
+				System.out.println("");
+			while(loop){
+					final long WAIT = 1000; //1sec
+					int hour = clock.get(Calendar.HOUR);
+					int min = clock.get(Calendar.MINUTE);
+					int sec = clock.get(Calendar.SECOND);
+					String h = String.valueOf(hour);
+					String m = String.valueOf(min);
+					String s = String.valueOf(sec);
+					System.out.println(hour+":"+min+":"+" "+sec);
+					System.out.println(h+":"+m+":"+" "+s);
+					String ccc = h + ":" + m + ":" + " " + s;
+					p.removeAll();//?
+					JLabel label1 = new JLabel(h);
+					JLabel label2 = new JLabel(m);
+					JLabel label3 = new JLabel(s);
+				    c.add(label1);
+				    c.add(label2);
+				    c.add(label3);
+				    c.setTitle(ccc);
+					try {
+						Thread.sleep(WAIT);
+					} catch (InterruptedException e) {
+						System.exit(-1);
+					}
+				    clock = Calendar.getInstance();
+				}
+			}
+	}
