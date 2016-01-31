@@ -1,0 +1,21 @@
+import java.util.Calendar;
+
+public class ClockTest {
+	public static void main(String args[]){
+	
+		Calendar clock;
+		boolean loop=true;
+	
+		clock = Calendar.getInstance();
+		System.out.println(clock);
+		System.out.println("");
+		System.out.println("");
+	while(loop){
+			int hour = clock.get(Calendar.HOUR);
+			int min = clock.get(Calendar.MINUTE);
+			int sec = clock.get(Calendar.SECOND);
+			System.out.println(hour+":"+min+":"+" "+sec);
+			clock = Calendar.getInstance();
+		}
+	}
+}
