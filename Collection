@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 //C(Class)ArrayList
-class CArraylist {
+class arrayList {
 	public ArrayList<String>str = new ArrayList<String>();
 
 	public void array() {
@@ -20,25 +20,28 @@ class CArraylist {
 }
 
 // C(Class)HashSet
-class CHashSet {
+class hashSet {
 	// Duplicate elements are not allowed
 	HashSet<String> hSet = new HashSet<String>();
 
-	void hashSet(){
+	void hash(){
 	hSet.add("Seldeia");
 	hSet.add("charotte");
 	hSet.add("charotte");
 	hSet.add("Yuno");
 	System.out.println(hSet);
+//	for(String outhash : hSet){
+//		System.out.println(outhash);
+//	}
 	}
 }
 
 public class Collection {
 	public static void main(String[] args) {
 		System.out.println("Test Collection");
-		CArraylist arr = new CArraylist();
-		CArraylist arr2 = new CArraylist();
-		CHashSet has = new CHashSet();
+		arrayList arr = new arrayList();
+		arrayList arr2 = new arrayList();
+		hashSet has = new hashSet ();
 		System.out.println("List↓");
 		arr.array();
 		arr.str.addAll(arr2.str);
@@ -46,7 +49,7 @@ public class Collection {
 		// Correct if the output results come out the same word twice
 		arr.array();
 		System.out.println("Set↓");
-		has.hashSet();
+		has.hash();
 		//Merge duplicate elements
 		//charotte output  once
 	}
