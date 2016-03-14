@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+
+//C(Class)ArrayList
+class CArraylist {
+	public ArrayList<String>str = new ArrayList<String>();
+
+	public void array() {
+		str.add("Japan");
+		str.add("America");
+		str.add("Fainal Fantasy14");
+		// The syntax of the meaning
+		str.add(new String("Charotte"));
+		str.add(new String("Seldeia chalcedony"));
+		System.out.println(str);
+		//		for (String outPut : str) {
+//			System.out.println(outPut);
+//		}
+	}
+}
+
+// C(Class)HashSet
+class CHashSet {
+	// Duplicate elements are not allowed
+	HashSet<String> hSet = new HashSet<String>();
+
+	void hashSet(){
+	hSet.add("Seldeia");
+	hSet.add("charotte");
+	hSet.add("charotte");
+	hSet.add("Yuno");
+	System.out.println(hSet);
+	}
+}
+
+public class Collection {
+	public static void main(String[] args) {
+		System.out.println("Test Collection");
+		CArraylist arr = new CArraylist();
+		CArraylist arr2 = new CArraylist();
+		CHashSet has = new CHashSet();
+		System.out.println("List↓");
+		arr.array();
+		arr.str.addAll(arr2.str);
+		System.out.println("Binding of the Same List");
+		// Correct if the output results come out the same word twice
+		arr.array();
+		System.out.println("Set↓");
+		has.hashSet();
+		//Merge duplicate elements
+		//charotte output  once
+	}
+}
